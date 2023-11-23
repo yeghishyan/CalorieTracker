@@ -13,5 +13,6 @@ struct GoGuessApp: App {
         WindowGroup {
             InitialView()
         }
+        .modelContainer(for: ChartItem.self)
     }
 }

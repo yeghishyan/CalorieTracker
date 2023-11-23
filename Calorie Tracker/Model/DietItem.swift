@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct DietItem {
+@Model
+class DietItem {
     struct Nutrient {
         var name: String
         var value: Double
@@ -16,14 +18,20 @@ struct DietItem {
     }
     
     var name: String
-    var description: String
+    var desc: String
     
     var nutrients: [ChartItem]
+    
+    init(name: String, desc: String, nutrients: [ChartItem]) {
+        self.name = name
+        self.desc = desc
+        self.nutrients = nutrients
+    }
 }
 
 var salmonSalad: DietItem = DietItem(
     name: "Salmon salad",
-    description: "Atkins 20, Atkins 40, Atkins 100, Atkins Friendly, Low Carb, Carb Friendly, Ketogenic Diet",
+    desc: "Atkins 20, Atkins 40, Atkins 100, Atkins Friendly, Low Carb, Carb Friendly, Ketogenic Diet",
     nutrients: salmonNutrients
 )
 
@@ -31,21 +39,21 @@ let salmonNutrients: [ChartItem] = [
     ChartItem(
         name: "Calories",
         currentValue: 389, todayValue: 500,
-        bgColor: Color(hex: "F3DEE8"), progressColor: Color(hex: "F30F57")
+        bgColor: "F3DEE8", progressColor: "F30F57"
     ),
     ChartItem(
         name: "Protein",
         currentValue: 41, todayValue: 500,
-        bgColor: Color(hex: "E0F1E1"), progressColor: Color(hex: "57E328")
+        bgColor: "E0F1E1", progressColor: "57E328"
     ),
     ChartItem(
         name: "Carbs",
         currentValue: 7.8, todayValue: 500,
-        bgColor: Color(hex: "E4EBF7"), progressColor: Color(hex: "6186E5")
+        bgColor: "E4EBF7", progressColor: "6186E5"
     ),
     ChartItem(
         name: "Fat",
         currentValue: 21, todayValue: 500,
-        bgColor: Color(hex: "F3F3E0"), progressColor: Color(hex: "F0D101")
+        bgColor: "F3F3E0", progressColor: "F0D101"
     )
 ]

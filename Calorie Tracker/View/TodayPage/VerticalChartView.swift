@@ -30,7 +30,7 @@ struct VerticalChartItemView: View {
         VStack(spacing: 5) {
             HStack {
                 Circle()
-                    .fill(item.progressColor)
+                    .fill(Color(hex: item.progressColor))
                     .frame(width: 8)
                 Text(item.name)
                 Spacer()
@@ -40,10 +40,10 @@ struct VerticalChartItemView: View {
             
             GeometryReader { proxy in
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(item.bgColor)
+                    .fill(Color(hex: item.bgColor))
                     .frame(maxWidth: proxy.size.width, maxHeight: thickness)
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .fill(item.progressColor)
+                    .fill(Color(hex: item.progressColor))
                     .frame(maxWidth: proxy.size.width*item.progress, maxHeight: thickness)
             }
             .frame(maxHeight: thickness)
