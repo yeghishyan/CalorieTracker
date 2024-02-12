@@ -15,8 +15,8 @@ struct CircleChartView: View {
             ForEach(Array(items.enumerated()), id: \.offset) { index, item in
                 CircleItemView(
                     progress: item.progress,
-                    bgColor: item.bgColor,
-                    progressColor: item.progressColor,
+                    bgColor: Color(hex: item.bgColor),
+                    progressColor: Color(hex: item.progressColor),
                     ringRadius: Double(index)*25.0,
                     thickness: 25.0/1.5
                 )

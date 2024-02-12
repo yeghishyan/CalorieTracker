@@ -8,13 +8,11 @@
 import SwiftUI
 import SwiftData
 
-@Model
-class ChartItem {
+struct ChartItem {
     var name: String
     var currentValue: Double
     var todayValue: Double
     
-    var progress: Double { currentValue/todayValue }
     var bgColor: String
     var progressColor: String
     
@@ -25,8 +23,9 @@ class ChartItem {
         self.bgColor = bgColor
         self.progressColor = progressColor
     }
-}
 
+    var progress: Double { currentValue/todayValue }
+}
 
 let demo: [ChartItem] = [
     ChartItem(

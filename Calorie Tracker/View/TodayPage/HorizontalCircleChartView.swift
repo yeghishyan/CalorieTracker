@@ -28,7 +28,3 @@ struct HorizontalCircleChartView: View {
         }
     }
 }
-
-#Preview {
-    HorizontalCircleChartView(items: salmonSalad.nutrients)
-}

@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
-struct GoGuessApp: App {
+struct Application: App {
     var body: some Scene {
         WindowGroup {
             InitialView()
         }
-        .modelContainer(for: ChartItem.self)
+        .modelContainer(for: [DietItem.self])
     }
 }
